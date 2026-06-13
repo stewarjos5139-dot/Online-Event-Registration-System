@@ -1,12 +1,14 @@
 # 明德学院 · 社团与活动报名管理平台
 
-> 软件工程期末项目 — 纯前端原型（HTML5 + CSS3 + 原生 JavaScript，零框架依赖）
+> 软件工程html前端开发课程期末答辩项目 — 纯前端原型（HTML5 + CSS3 + 原生 JavaScript，零框架依赖）
 
 ---
 
 ## 项目简介
 
-本系统为明德学院的社团与活动报名管理平台，分为**用户端**（浏览活动、报名、查看记录）和**管理端**（审核报名、发布活动、成员管理），共 6 个功能页面 + 1 个统一展示框架页，合计 7 个 HTML 文件。
+本项目本人为html前端开发课程的期末答辩项目。
+
+项目为明德学院的社团与活动报名管理平台，分为**用户端**（浏览活动、报名、查看记录）和**管理端**（审核报名、发布活动、成员管理），共 6 个功能页面 + 1 个统一展示框架页，合计 7 个 HTML 文件。
 
 ### 技术栈
 
@@ -21,11 +23,11 @@
 
 | 成员 | 负责页面 | 模块归属 |
 |------|----------|----------|
-| **张涵博** | [login.html](login.html) · [detail.html](detail.html) | 登录/注册 + 活动详情 |
-| **陈清博** | [index.html](index.html) | 首页活动列表 |
-| **黄朝阳** | [profile.html](profile.html) | 个人中心 |
-| **刘帅强** | [create-activity.html](create-activity.html) | 发布新活动 |
-| **王正彪** | [admin-dashboard.html](admin-dashboard.html) | 管理仪表盘 |
+| **张xx（组长/本人）** | [login.html](login.html) · [detail.html](detail.html) | 登录/注册 + 活动详情 |
+| **陈xx** | [index.html](index.html) | 首页活动列表 |
+| **黄xx** | [profile.html](profile.html) | 个人中心 |
+| **刘xx** | [create-activity.html](create-activity.html) | 发布新活动 |
+| **王xx** | [admin-dashboard.html](admin-dashboard.html) | 管理仪表盘 |
 | **全体** | [master.html](master.html) | 统一展示框架 |
 
 ---
@@ -90,7 +92,7 @@
 
 ### 1. login.html — 登录/注册
 
-**作者：张涵博**
+**作者：张xx(组长/本人)**
 
 | 功能 | 说明 |
 |------|------|
@@ -123,7 +125,7 @@
 
 ### 3. detail.html — 活动详情与报名
 
-**作者：张涵博**
+**作者：张xx（组长/本人）**
 
 | 功能 | 说明 |
 |------|------|
@@ -139,7 +141,7 @@
 
 ### 4. profile.html — 个人中心
 
-**作者：黄朝阳**
+**作者：黄xx**
 
 | 功能 | 说明 |
 |------|------|
@@ -155,7 +157,7 @@
 
 ### 5. admin-dashboard.html — 管理仪表盘
 
-**作者：王正彪**
+**作者：王xx**
 
 | 功能 | 说明 |
 |------|------|
@@ -172,7 +174,7 @@
 
 ### 6. create-activity.html — 发布新活动
 
-**作者：刘帅强**
+**作者：刘xx**
 
 | 功能 | 说明 |
 |------|------|
