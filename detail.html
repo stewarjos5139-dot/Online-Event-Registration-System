@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>活动详情 - 明德学院社团管理平台</title>
+  <link rel="stylesheet" href="./css/detail.css">
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <span class="icon">明</span> 明德社团
+      </a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="index.html">我的社团</a>
+        <a href="profile.html">个人中心</a>
+      </div>
+      <div class="nav-user">
+        <a class="back-link" href="index.html">← 返回首页</a>
+        <span class="avatar">张</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="poster" id="posterBanner">
+    <div class="poster-content">
+      <h1 id="posterTitle">Python数据分析实战工作坊</h1>
+      <span class="badge badge-open" id="posterStatus">报名中</span>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="content-area">
+      <div class="sidebar">
+        <div class="info-card">
+          <h3>活动详情</h3>
+          <p id="activityDesc">本次工作坊面向对数据分析感兴趣的同学，将由资深学长带领大家从零开始学习 Python 数据处理。无论你是编程新手还是有一定基础，都能从中收获实用技能。</p>
+        </div>
+        <div class="info-card">
+          <h3>活动信息</h3>
+          <div class="info-item"><span class="label">📅 日期</span><span id="infoDate">2026-05-20</span></div>
+          <div class="info-item"><span class="label">🕐 时间</span><span id="infoTime">14:00 - 17:00</span></div>
+          <div class="info-item"><span class="label">📍 地点</span><span id="infoLoc">教学楼A301</span></div>
+          <div class="info-item"><span class="label">👤 主办</span><span id="infoClub">数据科学社</span></div>
+          <div class="info-item"><span class="label">💺 名额</span><span>剩余 <strong class="remain-num"
+                id="infoRemain">12</strong> / <span id="infoTotal">40</span></span></div>
+        </div>
+        <div class="reg-form" id="regFormCard">
+          <h3>立即报名</h3>
+          <div class="form-group">
+            <label>姓名</label>
+            <input type="text" id="regName" placeholder="请输入姓名">
+          </div>
+          <div class="form-group">
+            <label>学号</label>
+            <input type="text" id="regStuId" placeholder="请输入学号">
+          </div>
+          <div class="form-group">
+            <label>联系方式</label>
+            <input type="text" id="regContact" placeholder="请输入手机号或邮箱">
+          </div>
+          <div class="form-group">
+            <label>备注</label>
+            <textarea id="regRemark" placeholder="如有特殊需求请填写（选填）"></textarea>
+          </div>
+          <button class="submit-btn" id="regSubmit">提交报名</button>
+        </div>
+        <div class="info-card" id="closedHint" style="display:none; text-align:center; color:#e74c3c; font-weight:600;">
+          该活动名额已满，报名已截止
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast"></div>
+  </div>
+  <footer class="footer">
+    <p>© 2026 明德学院 · 社团与活动报名管理平台</p>
+  </footer>
+
+  <script src="./js/detail.js"></script>
+
+</body>
+
+</html>

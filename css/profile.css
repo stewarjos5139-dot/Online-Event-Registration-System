@@ -1,0 +1,62 @@
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif; background:#f5f7fa; color:#333; min-height:100vh; }
+a { text-decoration:none; color:inherit; }
+
+.nav { background:#003366; color:#fff; position:sticky; top:0; z-index:1000; }
+.nav-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 24px; height:60px; }
+.nav-logo { display:flex; align-items:center; gap:10px; font-size:20px; font-weight:700; letter-spacing:1px; }
+.nav-logo .icon { width:36px; height:36px; background:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#003366; font-weight:900; font-size:18px; }
+.nav-links { display:flex; gap:8px; }
+.nav-links a { padding:8px 18px; border-radius:6px; font-size:14px; transition:all 0.2s; font-weight:500; }
+.nav-links a:hover, .nav-links a.active { background:rgba(255,255,255,0.15); }
+.nav-user { display:flex; align-items:center; gap:10px; font-size:14px; }
+
+.main { max-width:1000px; margin:0 auto; padding:32px 24px; }
+
+.profile-card { background:#fff; border-radius:12px; padding:36px; box-shadow:0 2px 12px rgba(0,0,0,0.06); display:flex; gap:28px; align-items:center; margin-bottom:28px; flex-wrap:wrap; }
+.profile-avatar { width:90px; height:90px; border-radius:50%; background:linear-gradient(135deg, #003366, #1a6fb5); display:flex; align-items:center; justify-content:center; font-size:36px; color:#fff; font-weight:700; flex-shrink:0; }
+.profile-info h2 { font-size:22px; color:#003366; margin-bottom:6px; }
+.profile-info p { font-size:14px; color:#777; margin-bottom:4px; }
+.profile-stats { display:flex; gap:40px; margin-left:auto; }
+.stat-item { text-align:center; }
+.stat-num { font-size:28px; font-weight:700; color:#003366; }
+.stat-label { font-size:12px; color:#999; margin-top:2px; }
+
+.tab-nav { display:flex; gap:0; margin-bottom:24px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.tab-btn { flex:1; padding:14px 0; border:none; background:transparent; font-size:15px; cursor:pointer; transition:all 0.25s; color:#888; font-weight:500; position:relative; }
+.tab-btn.active { color:#fff; background:#003366; }
+.tab-btn:not(.active):hover { color:#003366; background:#f0f4f8; }
+
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+.activity-list { display:flex; flex-direction:column; gap:14px; }
+.activity-item { background:#fff; border-radius:10px; padding:20px 24px; display:flex; align-items:center; gap:18px; box-shadow:0 1px 8px rgba(0,0,0,0.05); transition:box-shadow 0.2s; flex-wrap:wrap; }
+.activity-item:hover { box-shadow:0 4px 16px rgba(0,0,0,0.1); }
+.act-icon { width:56px; height:56px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:26px; color:#fff; flex-shrink:0; }
+.act-info { flex:1; min-width:200px; }
+.act-info h4 { font-size:15px; margin-bottom:6px; color:#222; }
+.act-info .meta { font-size:12px; color:#999; }
+.act-status { padding:6px 16px; border-radius:20px; font-size:12px; font-weight:600; flex-shrink:0; }
+.status-pending { background:#fff3cd; color:#856404; }
+.status-approved { background:#d4edda; color:#155724; }
+.status-rejected { background:#f8d7da; color:#721c24; }
+.act-cancel { padding:6px 14px; border:1.5px solid #e0e0e0; border-radius:6px; font-size:12px; cursor:pointer; background:#fff; color:#e74c3c; transition:all 0.2s; flex-shrink:0; }
+.act-cancel:hover { background:#e74c3c; color:#fff; border-color:#e74c3c; }
+
+.empty-state { text-align:center; padding:60px 20px; color:#bbb; }
+.empty-state .icon { font-size:56px; margin-bottom:12px; }
+
+.footer { background:#003366; color:rgba(255,255,255,0.7); text-align:center; padding:24px; font-size:13px; margin-top:40px; }
+
+.toast { position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#003366; color:#fff; padding:12px 28px; border-radius:8px; font-size:14px; z-index:9999; opacity:0; transition:opacity 0.3s; pointer-events:none; }
+.toast.show { opacity:1; }
+
+@media (max-width:768px) {
+  .profile-card { flex-direction:column; text-align:center; }
+  .profile-stats { margin-left:0; }
+  .nav-links { display:none; }
+  .activity-item { flex-direction:column; text-align:center; }
+}
+

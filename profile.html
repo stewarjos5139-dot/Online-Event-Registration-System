@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人中心 - 明德学院社团管理平台</title>
+  <link rel="stylesheet" href="./css/profile.css">
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <span class="icon">明</span> 明德社团
+      </a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="index.html">我的社团</a>
+        <a href="profile.html" class="active">个人中心</a>
+      </div>
+      <div class="nav-user">
+        <a href="login.html" style="color:rgba(255,255,255,0.8);font-size:14px;">退出登录</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main">
+    <div class="profile-card">
+      <div class="profile-avatar">张</div>
+      <div class="profile-info">
+        <h2>张三</h2>
+        <p>📧 zhangsan@mingde.edu.cn</p>
+        <p>🎓 软件工程 · 2024级 · 20240101001</p>
+      </div>
+      <div class="profile-stats">
+        <div class="stat-item">
+          <div class="stat-num" id="statTotal">6</div>
+          <div class="stat-label">累计报名</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="statApproved">4</div>
+          <div class="stat-label">已通过</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="statPending">2</div>
+          <div class="stat-label">待审核</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-nav" id="tabNav">
+      <button class="tab-btn active" data-tab="registered">我报名的活动</button>
+      <button class="tab-btn" data-tab="approved">已通过</button>
+      <button class="tab-btn" data-tab="pending">待审核</button>
+    </div>
+
+    <div class="tab-panel active" id="panelRegistered"></div>
+    <div class="tab-panel" id="panelApproved"></div>
+    <div class="tab-panel" id="panelPending"></div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 明德学院 · 社团与活动报名管理平台</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="./js/profile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+ /* ============================================
+   基础重置样式
+   清除浏览器默认的边距和填充
+   ============================================ */
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ /* ============================================
+   页面主体样式
+   设置字体、背景色、最小高度
+   ============================================ */
+ body {
+   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+   background: #f5f7fa;
+   color: #333;
+   min-height: 100vh;
+ }
+
+ /* ============================================
+   链接样式重置
+   去除下划线，继承父元素颜色
+   ============================================ */
+ a {
+   text-decoration: none;
+   color: inherit;
+ }
+
+ /* ============================================
+   整体布局容器
+   使用flex布局，侧边栏+主内容区
+   ============================================ */
+ .layout {
+   display: flex;
+   min-height: 100vh;
+ }
+
+ /* ============================================
+   左侧侧边栏样式
+   固定宽度240px，深蓝色背景
+   ============================================ */
+ .sidebar {
+   width: 240px;
+   background: #003366;
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+ }
+
+ /* 侧边栏头部 */
+ .sidebar-header {
+   padding: 24px 20px;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .sidebar-header h2 {
+   font-size: 18px;
+ }
+
+ /* 导航菜单 */
+ .sidebar-nav {
+   flex: 1;
+   padding: 16px 0;
+ }
+
+ /* 导航链接样式 */
+ .sidebar-nav a {
+   display: block;
+   padding: 13px 20px;
+   font-size: 14px;
+   color: rgba(255, 255, 255, 0.8);
+   margin: 2px 8px;
+   border-radius: 8px;
+ }
+
+ /* 导航链接悬停效果 */
+ .sidebar-nav a:hover {
+   background: rgba(255, 255, 255, 0.1);
+   color: #fff;
+ }
+
+ /* 当前选中导航项 */
+ .sidebar-nav a.active {
+   background: rgba(255, 255, 255, 0.18);
+   color: #fff;
+   font-weight: 600;
+ }
+
+ /* ============================================
+   主内容区域
+   左侧留出240px给侧边栏
+   ============================================ */
+ .main-area {
+   flex: 1;
+   margin-left: 240px;
+   padding: 28px 32px;
+ }
+
+ /* 页面标题区域 */
+ .page-header {
+   margin-bottom: 28px;
+ }
+
+ .page-header h1 {
+   font-size: 24px;
+   color: #003366;
+   margin-bottom: 6px;
+ }
+
+ .page-header p {
+   font-size: 14px;
+   color: #999;
+ }
+
+ /* ============================================
+   表单卡片样式
+   白色背景、圆角、阴影
+   ============================================ */
+ .form-card {
+   background: #fff;
+   border-radius: 12px;
+   padding: 36px;
+   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+   margin-bottom: 20px;
+ }
+
+ /* 卡片标题 */
+ .form-card h3 {
+   font-size: 17px;
+   color: #003366;
+   margin-bottom: 20px;
+   padding-bottom: 12px;
+   border-bottom: 2px solid #f0f4f8;
+ }
+
+ /* 表单行 - 两列布局 */
+ .form-row {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 18px;
+ }
+
+ /* 表单组 - 每个输入项的容器 */
+ .form-group {
+   margin-bottom: 18px;
+ }
+
+ /* 跨两列的表单组 */
+ .form-group.full {
+   grid-column: 1 / -1;
+ }
+
+ /* 标签样式 */
+ .form-group label {
+   display: block;
+   font-size: 13px;
+   color: #555;
+   margin-bottom: 6px;
+   font-weight: 500;
+ }
+
+ /* 必填标记 */
+ .form-group label .required {
+   color: #e74c3c;
+ }
+
+ /* 输入框通用样式 */
+ .form-group input,
+ .form-group textarea,
+ .form-group select {
+   width: 100%;
+   padding: 11px 14px;
+   border: 1.5px solid #e0e0e0;
+   border-radius: 8px;
+   font-size: 14px;
+   outline: none;
+   font-family: inherit;
+ }
+
+ /* 输入框聚焦效果 */
+ .form-group input:focus,
+ .form-group textarea:focus,
+ .form-group select:focus {
+   border-color: #003366;
+ }
+
+ /* 文本域样式 */
+ .form-group textarea {
+   resize: vertical;
+   min-height: 120px;
+ }
+
+ /* 提示文字 */
+ .form-hint {
+   font-size: 12px;
+   color: #999;
+   margin-top: 4px;
+ }
+
+ /* ============================================
+   文件上传区域样式
+   ============================================ */
+ .upload-area {
+   border: 2px dashed #c0cdd8;
+   border-radius: 10px;
+   padding: 40px;
+   text-align: center;
+   cursor: pointer;
+   background: #fafbfc;
+ }
+
+ .upload-area:hover {
+   border-color: #003366;
+   background: #f0f4f8;
+ }
+
+ .upload-area .icon {
+   font-size: 42px;
+   margin-bottom: 10px;
+ }
+
+ .upload-area p {
+   font-size: 14px;
+   color: #888;
+ }
+
+ /* ============================================
+   按钮区域样式
+   ============================================ */
+ .btn-row {
+   display: flex;
+   gap: 14px;
+   justify-content: flex-end;
+   margin-top: 8px;
+ }
+
+ /* 主要按钮 - 蓝色 */
+ .btn-primary {
+   padding: 12px 32px;
+   background: #003366;
+   color: #fff;
+   border: none;
+   border-radius: 8px;
+   font-size: 15px;
+   font-weight: 600;
+   cursor: pointer;
+ }
+
+ .btn-primary:hover {
+   background: #004d99;
+ }
+
+ /* 次要按钮 - 白色边框 */
+ .btn-secondary {
+   padding: 12px 32px;
+   background: #fff;
+   color: #555;
+   border: 1.5px solid #d0d7de;
+   border-radius: 8px;
+   font-size: 15px;
+   cursor: pointer;
+ }
+
+ .btn-secondary:hover {
+   border-color: #003366;
+   color: #003366;
+ }
+
+ /* 草稿按钮 - 橙色 */
+ .btn-draft {
+   padding: 12px 32px;
+   background: #fff;
+   color: #e67e22;
+   border: 1.5px solid #e67e22;
+   border-radius: 8px;
+   font-size: 15px;
+   cursor: pointer;
+ }
+
+ .btn-draft:hover {
+   background: #fff9f2;
+ }
+
+ /* ============================================
+   Toast提示消息样式
+   固定在页面顶部中央
+   ============================================ */
+ .toast {
+   position: fixed;
+   top: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   background: #003366;
+   color: #fff;
+   padding: 12px 28px;
+   border-radius: 8px;
+   font-size: 14px;
+   z-index: 9999;
+   opacity: 0;
+   transition: opacity 0.3s;
+ }
+
+ .toast.show {
+   opacity: 1;
+ }
+
+ /* 成功状态的Toast */
+ .toast.success {
+   background: #27ae60;
+ }

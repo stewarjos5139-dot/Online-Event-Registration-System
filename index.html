@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>明德学院 - 社团与活动报名管理平台</title>
+  <!-- 引入外部CSS文件 -->
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span class="logo">🏛️ 明德学院</span>
+        <span class="menu-btn" id="menuBtn">☰</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">🏠 首页</a>
+        <a href="clubs.html">👥 我的社团</a>
+        <a href="profile.html">👤 个人中心</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索活动...">
+        <button id="searchBtn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <h2 class="section-title">热门活动</h2>
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-tag active" data-cat="all">全部</button>
+      <button class="filter-tag" data-cat="academic">📚 学术</button>
+      <button class="filter-tag" data-cat="sports">⚽ 体育</button>
+      <button class="filter-tag" data-cat="arts">🎨 艺术</button>
+      <button class="filter-tag" data-cat="tech">💻 科技</button>
+      <button class="filter-tag" data-cat="volunteer">🤝 志愿</button>
+    </div>
+    <div class="grid" id="activityGrid"></div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 明德学院 · 社团与活动报名管理平台</p>
+  </footer>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <a href="index.html">🏠 首页</a>
+    <a href="clubs.html">👥 我的社团</a>
+    <a href="profile.html">👤 个人中心</a>
+    <a href="login.html" style="color:#e74c3c;">退出登录</a>
+    <button class="close-btn" id="closeDrawer">关闭</button>
+  </div>
+
+  <!-- 引入外部JS文件 -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

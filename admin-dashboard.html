@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- 声明文档类型为HTML5 -->
+<html lang="zh-CN">
+<!-- 设置网页语言为简体中文 -->
+
+<head>
+  <!-- 头部区域：存放网页元信息、标题、样式、脚本引用等 -->
+  <meta charset="UTF-8">
+  <!-- 设置网页字符编码为UTF-8，支持中文等字符 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 适配移动端：宽度等于设备宽度，初始缩放比例1.0 -->
+  <title>管理仪表盘 - 明德学院社团管理平台</title>
+  <!-- 网页标题，显示在浏览器标签栏 -->
+  <link rel="stylesheet" href="./css/admin-dashboard.css">
+  <!-- 引入外部CSS样式文件 -->
+</head>
+
+<body>
+  <!-- 网页主体区域：用户可见的内容 -->
+
+  <!-- 整体布局容器：采用flex弹性布局 -->
+  <div class="layout">
+    <!-- 侧边栏导航：固定定位，默认在左侧 -->
+    <div class="sidebar" id="sidebar">
+      <h2>明德学院</h2>
+      <p>管理控制台</p>
+      <!-- 菜单列表 -->
+      <div class="menu">
+        <a href="#" class="active" onclick="go('dashboard',this)">📊 仪表盘</a>
+        <a href="#" onclick="go('review',this)">📝 报名审核</a>
+        <a href="#" onclick="go('members',this)">👥 成员管理</a>
+        <a href="create-activity.html">➕ 发布新活动</a>
+        <a href="login.html">← 退出登录</a>
+      </div>
+    </div>
+
+    <!-- 主内容区域：侧边栏右侧的展示区域 -->
+    <div class="main">
+      <!-- 仪表盘页面：默认显示的页面 -->
+      <div class="page active" id="dashboard">
+        <h2>📊 仪表盘</h2>
+        <p style="margin:10px 0 20px; color:#888">欢迎回来，管理员</p>
+        <!-- 统计卡片区域：展示总申请、待审核、已通过、已拒绝数量 -->
+        <div class="stats">
+          <div class="card">
+            <h3 id="totalNum">8</h3><span>总申请数</span>
+          </div>
+          <div class="card">
+            <h3 id="waitNum">4</h3><span>待审核</span>
+          </div>
+          <div class="card">
+            <h3 id="passNum">3</h3><span>已通过</span>
+          </div>
+          <div class="card">
+            <h3 id="refuseNum">1</h3><span>已拒绝</span>
+          </div>
+        </div>
+        <!-- 提示面板 -->
+        <div class="panel">
+          <h3>数据实时同步</h3>
+          <p>审核通过自动加入社团成员，撤销自动移出成员列表</p>
+        </div>
+      </div>
+
+      <!-- 报名审核页面 -->
+      <div class="page" id="review">
+        <h2>📝 报名审核</h2>
+        <div class="panel">
+          <!-- 面板头部：标题 + 筛选器 -->
+          <div class="panel-header">
+            <h3>申请列表</h3>
+            <select class="filter" id="filterSelect" onchange="filterTable()">
+              <option value="all">全部</option>
+              <option value="pending">待审核</option>
+              <option value="pass">已通过</option>
+              <option value="refuse">已拒绝</option>
+            </select>
+          </div>
+          <!-- 申请信息表格 -->
+          <table id="applyTable">
+            <tr>
+              <th>姓名</th>
+              <th>活动</th>
+              <th>状态</th>
+              <th>操作</th>
+            </tr>
+            <tr data-status="pending" data-name="李明" data-stu="20240101010">
+              <td>李明</td>
+              <td>Python数据分析实战</td>
+              <td><span class="badge pending">待审核</span></td>
+              <td>
+                <button class="btn-yes" onclick="changeStatus(this,'pass')">通过</button>
+                <button class="btn-no" onclick="changeStatus(this,'refuse')">拒绝</button>
+              </td>
+            </tr>
+            <tr data-status="pending" data-name="王晓芳" data-stu="20240102015">
+              <td>王晓芳</td>
+              <td>校园足球联赛</td>
+              <td><span class="badge pending">待审核</span></td>
+              <td>
+                <button class="btn-yes" onclick="changeStatus(this,'pass')">通过</button>
+                <button class="btn-no" onclick="changeStatus(this,'refuse')">拒绝</button>
+              </td>
+            </tr>
+            <tr data-status="pending" data-name="陈建国" data-stu="20230103020">
+              <td>陈建国</td>
+              <td>水彩画入门体验课</td>
+              <td><span class="badge pending">待审核</span></td>
+              <td>
+                <button class="btn-yes" onclick="changeStatus(this,'pass')">通过</button>
+                <button class="btn-no" onclick="changeStatus(this,'refuse')">拒绝</button>
+              </td>
+            </tr>
+            <tr data-status="pending" data-name="刘思雨" data-stu="20240104025">
+              <td>刘思雨</td>
+              <td>数学建模竞赛培训</td>
+              <td><span class="badge pending">待审核</span></td>
+              <td>
+                <button class="btn-yes" onclick="changeStatus(this,'pass')">通过</button>
+                <button class="btn-no" onclick="changeStatus(this,'refuse')">拒绝</button>
+              </td>
+            </tr>
+            <tr data-status="pass" data-name="赵伟" data-stu="20220105030">
+              <td>赵伟</td>
+              <td>支教志愿者</td>
+              <td><span class="badge success">已通过</span></td>
+              <td><button class="btn-back" onclick="changeStatus(this,'back')">撤销</button></td>
+            </tr>
+            <tr data-status="pass" data-name="孙悦" data-stu="20240106035">
+              <td>孙悦</td>
+              <td>Python数据分析实战</td>
+              <td><span class="badge success">已通过</span></td>
+              <td><button class="btn-back" onclick="changeStatus(this,'back')">撤销</button></td>
+            </tr>
+            <tr data-status="pass" data-name="周杰" data-stu="20230107040">
+              <td>周杰</td>
+              <td>校园足球联赛</td>
+              <td><span class="badge success">已通过</span></td>
+              <td><button class="btn-back" onclick="changeStatus(this,'back')">撤销</button></td>
+            </tr>
+            <tr data-status="refuse" data-name="吴敏" data-stu="20240108045">
+              <td>吴敏</td>
+              <td>街舞社公开体验课</td>
+              <td><span class="badge danger">已拒绝</span></td>
+              <td><button class="btn-back" onclick="changeStatus(this,'back')">撤销</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 成员管理页面 -->
+      <div class="page" id="members">
+        <h2>👥 社团成员</h2>
+        <p style="margin:10px 0;color:#888;">总人数：<span id="memberCount">8</span> 人</p>
+        <div class="panel">
+          <table>
+            <thead>
+              <tr>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>年级</th>
+                <th>加入时间</th>
+                <th>角色</th>
+              </tr>
+            </thead>
+            <tbody id="memberBody">
+              <tr>
+                <td>张三</td>
+                <td>20240101001</td>
+                <td>2024级</td>
+                <td>2025-09-15</td>
+                <td>社员</td>
+              </tr>
+              <tr>
+                <td>李四</td>
+                <td>20240101002</td>
+                <td>2024级</td>
+                <td>2025-09-16</td>
+                <td>副社长</td>
+              </tr>
+              <tr>
+                <td>王五</td>
+                <td>20230102003</td>
+                <td>2023级</td>
+                <td>2024-03-10</td>
+                <td>社长</td>
+              </tr>
+              <tr>
+                <td>赵六</td>
+                <td>20240101004</td>
+                <td>2024级</td>
+                <td>2025-09-20</td>
+                <td>社员</td>
+              </tr>
+              <tr>
+                <td>陈七</td>
+                <td>20220103005</td>
+                <td>2022级</td>
+                <td>2023-09-01</td>
+                <td>技术顾问</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入外部JavaScript脚本文件 -->
+  <script src="./js/admin-dashboard.js"></script>
+</body>
+
+</html>

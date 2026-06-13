@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发布新活动 - 明德学院社团管理平台</title>
+  <link rel="stylesheet" href="./css/create-activity.css">
+</head>
+
+<body>
+
+  <!-- ============================================
+     页面整体布局
+     包含侧边栏和主内容区
+     ============================================ -->
+  <div class="layout">
+
+    <!-- 左侧侧边栏导航 -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>明德学院</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a href=" ">📊 仪表盘</a>
+        <a href="admin-dashboard.html">📝 报名审核</a>
+        <a href="create-activity.html" class="active">➕ 发布新活动</a>
+        <a href="admin-dashboard.html">👥 成员管理</a>
+      </nav>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-area">
+
+      <!-- 页面标题 -->
+      <div class="page-header">
+        <h1>➕ 发布新活动</h1>
+        <p>填写活动信息，创建新的社团活动</p>
+      </div>
+
+      <!-- 表单容器 -->
+      <div class="form-container">
+
+        <!-- 基本信息卡片 -->
+        <div class="form-card">
+          <h3>基本信息</h3>
+          <div class="form-row">
+            <!-- 活动标题 - 跨两列 -->
+            <div class="form-group full">
+              <label><span class="required">*</span> 活动标题</label>
+              <input type="text" id="actTitle" placeholder="请输入活动标题（2-50字）" maxlength="50">
+            </div>
+
+            <!-- 活动日期 -->
+            <div class="form-group">
+              <label><span class="required">*</span> 活动日期</label>
+              <input type="date" id="actDate">
+            </div>
+
+            <!-- 活动时间 -->
+            <div class="form-group">
+              <label><span class="required">*</span> 活动时间</label>
+              <select id="actTime">
+                <option value="">请选择时间段</option>
+                <option value="09:00-12:00">上午 09:00 - 12:00</option>
+                <option value="14:00-17:00">下午 14:00 - 17:00</option>
+                <option value="18:30-20:30">晚上 18:30 - 20:30</option>
+                <option value="19:00-21:00">晚上 19:00 - 21:00</option>
+              </select>
+            </div>
+
+            <!-- 活动地点 -->
+            <div class="form-group">
+              <label><span class="required">*</span> 活动地点</label>
+              <input type="text" id="actLocation" placeholder="例如：教学楼A301">
+            </div>
+
+            <!-- 名额限制 -->
+            <div class="form-group">
+              <label><span class="required">*</span> 名额限制</label>
+              <input type="number" id="actCapacity" placeholder="请输入人数" min="1" max="999">
+              <p class="form-hint">设置活动可容纳的最大人数</p>
+            </div>
+
+            <!-- 活动分类 -->
+            <div class="form-group">
+              <label><span class="required">*</span> 活动分类</label>
+              <select id="actCategory">
+                <option value="">请选择分类</option>
+                <option value="academic">学术</option>
+                <option value="sports">体育</option>
+                <option value="arts">艺术</option>
+                <option value="tech">科技</option>
+                <option value="volunteer">志愿服务</option>
+              </select>
+            </div>
+
+            <!-- 主办社团 -->
+            <div class="form-group">
+              <label><span class="required">*</span> 主办社团</label>
+              <input type="text" id="actClub" placeholder="例如：数据科学社" value="数据科学社">
+            </div>
+          </div>
+        </div>
+
+        <!-- 海报上传卡片 -->
+        <div class="form-card">
+          <h3>海报图片</h3>
+          <div class="upload-area" id="uploadArea">
+            <div class="icon">🖼️</div>
+            <p>点击此处上传活动海报</p>
+            <input type="file" id="posterFile" accept="image/*" style="display:none;">
+            <p class="form-hint">支持 JPG、PNG 格式，建议尺寸 1200×600px</p>
+          </div>
+        </div>
+
+        <!-- 活动详情卡片 -->
+        <div class="form-card">
+          <h3>活动详情</h3>
+          <div class="form-group full">
+            <label><span class="required">*</span> 活动简介</label>
+            <textarea id="actSummary" placeholder="请输入活动简要介绍，将在活动卡片中显示（10-200字）" maxlength="200"></textarea>
+          </div>
+          <div class="form-group full">
+            <label><span class="required">*</span> 详细描述</label>
+            <textarea id="actDesc" placeholder="请输入活动的详细描述，包括活动内容、注意事项、嘉宾信息等..." style="min-height:160px;"></textarea>
+          </div>
+        </div>
+
+        <!-- 操作按钮区域 -->
+        <div class="btn-row">
+          <button class="btn-secondary" id="previewBtn">👁️ 预览</button>
+          <button class="btn-draft" id="draftBtn">📥 保存草稿</button>
+          <button class="btn-primary" id="publishBtn">✅ 立即发布</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast提示消息容器 -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ============================================
+     JavaScript功能代码
+     ============================================ -->
+  <script src="./js/create-activity.js"></script>
+</body>
+
+</html>

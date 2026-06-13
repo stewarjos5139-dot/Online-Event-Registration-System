@@ -1,0 +1,33 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude 本地配置
+.claude/
+
+# 压缩包和文档（防止个人信息泄露）
+*.zip
+*.rar
+*.7z
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.pdf
+
+# 依赖
+node_modules/
+
+# 环境变量（防泄露密钥）
+.env
+.env.*
