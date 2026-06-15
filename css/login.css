@@ -9,8 +9,8 @@ body {
   background: linear-gradient(135deg, #003366 0%, #1a5276 50%, #2e86c1 100%);
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 20px;
 }
 
